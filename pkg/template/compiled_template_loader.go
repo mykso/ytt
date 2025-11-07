@@ -6,7 +6,7 @@ package template
 import (
 	"fmt"
 
-	"github.com/k14s/starlark-go/starlark"
+	"go.starlark.net/starlark"
 )
 
 type CompiledTemplateLoader interface {

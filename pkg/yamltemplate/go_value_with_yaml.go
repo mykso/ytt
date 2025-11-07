@@ -8,7 +8,7 @@ import (
 
 	tplcore "carvel.dev/ytt/pkg/template/core"
 	"carvel.dev/ytt/pkg/yamlmeta"
-	"github.com/k14s/starlark-go/starlark"
+	"go.starlark.net/starlark"
 )
 
 func NewGoValueWithYAML(val interface{}) tplcore.GoValue {

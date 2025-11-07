@@ -6,7 +6,7 @@ package core
 import (
 	"fmt"
 
-	"github.com/k14s/starlark-go/starlark"
+	"go.starlark.net/starlark"
 )
 
 // BoolArg return a boolean value from starlark.Tupe based on a given key, defaults to defaultValue.

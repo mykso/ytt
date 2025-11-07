@@ -7,7 +7,7 @@ import (
 	"fmt"
 
 	"carvel.dev/ytt/pkg/template"
-	"github.com/k14s/starlark-go/starlark"
+	"go.starlark.net/starlark"
 )
 
 type MatchChildDefaultsAnnotation struct {

@@ -11,7 +11,7 @@ import (
 	tplcore "carvel.dev/ytt/pkg/template/core"
 	"carvel.dev/ytt/pkg/yamlmeta"
 	"carvel.dev/ytt/pkg/yamltemplate"
-	"github.com/k14s/starlark-go/starlark"
+	"go.starlark.net/starlark"
 )
 
 type DocumentMatchAnnotation struct {

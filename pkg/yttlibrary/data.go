@@ -7,8 +7,8 @@ import (
 	"fmt"
 
 	"carvel.dev/ytt/pkg/template/core"
-	"github.com/k14s/starlark-go/starlark"
-	"github.com/k14s/starlark-go/starlarkstruct"
+	"go.starlark.net/starlark"
+	"go.starlark.net/starlarkstruct"
 )
 
 type DataModule struct {

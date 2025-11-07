@@ -6,7 +6,7 @@ package core
 import (
 	"fmt"
 
-	"github.com/k14s/starlark-go/starlark"
+	"go.starlark.net/starlark"
 )
 
 type StarlarkNoop struct{}

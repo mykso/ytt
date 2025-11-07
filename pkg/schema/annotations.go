@@ -12,7 +12,7 @@ import (
 	"carvel.dev/ytt/pkg/template/core"
 	"carvel.dev/ytt/pkg/validations"
 	"carvel.dev/ytt/pkg/yamlmeta"
-	"github.com/k14s/starlark-go/starlark"
+	"go.starlark.net/starlark"
 )
 
 // Declare @schema/... annotation names

@@ -14,7 +14,7 @@ import (
 	"carvel.dev/ytt/pkg/validations"
 	"carvel.dev/ytt/pkg/workspace/datavalues"
 	"carvel.dev/ytt/pkg/yamlmeta"
-	"github.com/k14s/starlark-go/starlark"
+	"go.starlark.net/starlark"
 )
 
 // LibraryExecution is the total set of configuration and dependencies that are used to accomplish the execution of a

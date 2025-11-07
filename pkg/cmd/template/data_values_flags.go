@@ -15,7 +15,7 @@ import (
 	"carvel.dev/ytt/pkg/workspace/ref"
 	"carvel.dev/ytt/pkg/yamlmeta"
 	yttoverlay "carvel.dev/ytt/pkg/yttlibrary/overlay"
-	"github.com/k14s/starlark-go/starlark"
+	"go.starlark.net/starlark"
 )
 
 const (

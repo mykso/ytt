@@ -7,7 +7,7 @@ import (
 	"fmt"
 
 	"carvel.dev/ytt/pkg/template/core"
-	"github.com/k14s/starlark-go/starlark"
+	"go.starlark.net/starlark"
 	// Should not import template specific packages here (like yamlmeta)
 )
 

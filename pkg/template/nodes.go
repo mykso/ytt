@@ -7,7 +7,7 @@ import (
 	"strconv"
 
 	"carvel.dev/ytt/pkg/template/core"
-	"github.com/k14s/starlark-go/starlark"
+	"go.starlark.net/starlark"
 )
 
 var (

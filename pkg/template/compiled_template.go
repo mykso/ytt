@@ -10,9 +10,9 @@ import (
 
 	"carvel.dev/ytt/pkg/filepos"
 	tplcore "carvel.dev/ytt/pkg/template/core"
-	"github.com/k14s/starlark-go/resolve"
-	"github.com/k14s/starlark-go/starlark"
-	"github.com/k14s/starlark-go/syntax"
+	"go.starlark.net/resolve"
+	"go.starlark.net/starlark"
+	"go.starlark.net/syntax"
 )
 
 type EvaluationCtxDialectName string

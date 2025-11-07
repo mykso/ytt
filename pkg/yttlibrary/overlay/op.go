@@ -8,7 +8,7 @@ import (
 
 	"carvel.dev/ytt/pkg/template"
 	"carvel.dev/ytt/pkg/yamlmeta"
-	"github.com/k14s/starlark-go/starlark"
+	"go.starlark.net/starlark"
 )
 
 type Op struct {

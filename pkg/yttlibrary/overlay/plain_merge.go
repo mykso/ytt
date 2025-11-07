@@ -9,7 +9,7 @@ import (
 	"carvel.dev/ytt/pkg/template"
 	"carvel.dev/ytt/pkg/yamlmeta"
 	"carvel.dev/ytt/pkg/yamltemplate"
-	"github.com/k14s/starlark-go/starlark"
+	"go.starlark.net/starlark"
 )
 
 // AnnotateForPlainMerge configures `node` to be an overlay doing a "plain merge":

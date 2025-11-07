@@ -6,7 +6,7 @@ package template
 import (
 	"fmt"
 
-	"github.com/k14s/starlark-go/syntax"
+	"go.starlark.net/syntax"
 )
 
 type ProgramAST struct {

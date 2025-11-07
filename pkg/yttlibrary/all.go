@@ -9,8 +9,8 @@ import (
 	"carvel.dev/ytt/pkg/cmd/ui"
 	tplcore "carvel.dev/ytt/pkg/template/core"
 	"carvel.dev/ytt/pkg/yttlibrary/overlay"
-	"github.com/k14s/starlark-go/starlark"
-	"github.com/k14s/starlark-go/starlarkstruct"
+	"go.starlark.net/starlark"
+	"go.starlark.net/starlarkstruct"
 )
 
 var registeredExts []*starlarkstruct.Module

@@ -14,8 +14,8 @@ import (
 	"carvel.dev/ytt/pkg/yamlmeta"
 	"carvel.dev/ytt/pkg/yamltemplate"
 	"carvel.dev/ytt/pkg/yttlibrary/overlay"
-	"github.com/k14s/starlark-go/starlark"
-	"github.com/k14s/starlark-go/starlarkstruct"
+	"go.starlark.net/starlark"
+	"go.starlark.net/starlarkstruct"
 )
 
 // LibraryModule is the definition of the ytt-supplied Starlark module `@ytt:library`

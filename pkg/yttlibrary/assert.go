@@ -8,9 +8,9 @@ import (
 
 	"carvel.dev/ytt/pkg/orderedmap"
 	"carvel.dev/ytt/pkg/template/core"
-	"github.com/k14s/starlark-go/starlark"
-	"github.com/k14s/starlark-go/starlarkstruct"
-	"github.com/k14s/starlark-go/syntax"
+	"go.starlark.net/starlark"
+	"go.starlark.net/starlarkstruct"
+	"go.starlark.net/syntax"
 )
 
 // NewAssertModule constructs a new instance of AssertModule, respecting the "validations" experiment flag.

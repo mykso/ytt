@@ -15,7 +15,7 @@ import (
 	"carvel.dev/ytt/pkg/yamlmeta"
 	"carvel.dev/ytt/pkg/yamltemplate"
 	"carvel.dev/ytt/pkg/yttlibrary"
-	"github.com/k14s/starlark-go/starlark"
+	"go.starlark.net/starlark"
 )
 
 // NodeValidation represents a validationRun attached to a Node via an annotation.

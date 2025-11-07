@@ -12,8 +12,8 @@ import (
 	"carvel.dev/ytt/pkg/orderedmap"
 	"carvel.dev/ytt/pkg/template/core"
 	"carvel.dev/ytt/pkg/yamlmeta"
-	"github.com/k14s/starlark-go/starlark"
-	"github.com/k14s/starlark-go/starlarkstruct"
+	"go.starlark.net/starlark"
+	"go.starlark.net/starlarkstruct"
 )
 
 var (

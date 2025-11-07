@@ -22,7 +22,7 @@ import (
 	"carvel.dev/ytt/pkg/yamlmeta"
 	"carvel.dev/ytt/pkg/yamltemplate"
 	"carvel.dev/ytt/pkg/yttlibrary"
-	"github.com/k14s/starlark-go/starlark"
+	"go.starlark.net/starlark"
 )
 
 // MarshalableResult is a template evaluation result that can be (likely) marshaled into a slice of bytes.

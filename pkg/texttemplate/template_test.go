@@ -13,7 +13,7 @@ import (
 
 	"carvel.dev/ytt/pkg/template"
 	"carvel.dev/ytt/pkg/texttemplate"
-	"github.com/k14s/starlark-go/starlark"
+	"go.starlark.net/starlark"
 )
 
 var (

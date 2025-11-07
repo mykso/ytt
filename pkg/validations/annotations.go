@@ -9,7 +9,7 @@ import (
 	"carvel.dev/ytt/pkg/filepos"
 	"carvel.dev/ytt/pkg/template"
 	"carvel.dev/ytt/pkg/yamlmeta"
-	"github.com/k14s/starlark-go/starlark"
+	"go.starlark.net/starlark"
 )
 
 // Declare @assert/... annotation and keyword argument names

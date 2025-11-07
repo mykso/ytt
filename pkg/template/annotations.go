@@ -7,7 +7,7 @@ import (
 	"strings"
 
 	"carvel.dev/ytt/pkg/filepos"
-	"github.com/k14s/starlark-go/starlark"
+	"go.starlark.net/starlark"
 )
 
 type NodeAnnotations map[AnnotationName]NodeAnnotation

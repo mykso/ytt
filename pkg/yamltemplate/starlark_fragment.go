@@ -9,8 +9,8 @@ import (
 
 	tplcore "carvel.dev/ytt/pkg/template/core"
 	"carvel.dev/ytt/pkg/yamlmeta"
-	"github.com/k14s/starlark-go/starlark"
-	"github.com/k14s/starlark-go/syntax"
+	"go.starlark.net/starlark"
+	"go.starlark.net/syntax"
 )
 
 const (
