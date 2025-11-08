@@ -2,6 +2,7 @@ package syntax
 
 import (
 	"fmt"
+	"log"
 )
 
 var _ = fmt.Sprintf
@@ -30,8 +31,8 @@ type blockScanner struct {
 var _ scannerInterface = &blockScanner{}
 
 type blockScannerToken struct {
-	val tokenValue
-	tok Token
+	val              tokenValue
+	tok              Token
 	alreadyOutdented bool
 }
 
@@ -104,9 +105,6 @@ func (s *blockScanner) nextTokenInner() blockScannerToken {
 	// our own "indention" at appropriate times
 	case INDENT, OUTDENT:
 		return s.nextTokenInner()
-
-	case PASS:
-		s.errorf(s.getPos(), "use of reserved keyword 'pass' is not allowed")
 
 	// 'end' is identifier
 	case IDENT:
@@ -193,7 +191,25 @@ func (s *blockScanner) errorf(pos Position, format string, args ...interface{}) 
 }
 
 func (s *blockScanner) recover(err *error) {
-	s.scanner.recover(err)
+	// The recover() built-in function must be called directly inside a deferred
+	// function. Therefore, we have to reimplement the s.scanner.recover method.
+	// See https://go.dev/ref/spec#Handling_panics for details.
+
+	// The scanner and parser panic both for routine errors like
+	// syntax errors and for programmer bugs like array index
+	// errors.  Turn both into error returns.  Catching bug panics
+	// is especially important when processing many files.
+	switch e := recover().(type) {
+	case nil:
+		// no panic
+	case Error:
+		*err = e
+	default:
+		*err = Error{s.scanner.pos, fmt.Sprintf("internal error: %v", e)}
+		if debug {
+			log.Fatal(*err)
+		}
+	}
 }
 
 func (s *blockScanner) getLineComments() []Comment {
@@ -209,6 +225,6 @@ func (s *blockScanner) getPos() Position { return s.scanner.getPos() }
 // augment regular scanner
 var _ scannerInterface = &scanner{}
 
-func (s *scanner) getLineComments() []Comment { return s.lineComments }
+func (s *scanner) getLineComments() []Comment   { return s.lineComments }
 func (s *scanner) getSuffixComments() []Comment { return s.suffixComments }
-func (s *scanner) getPos() Position { return s.pos }
+func (s *scanner) getPos() Position             { return s.pos }

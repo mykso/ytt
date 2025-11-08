@@ -50,7 +50,7 @@ github.com/spf13/pflag
 ## explicit; go 1.20
 github.com/stretchr/testify/assert
 github.com/stretchr/testify/require
-# go.starlark.net v0.0.0-20251107151204-503034dafe4e => github.com/mykso/starlark-go v0.0.0-20251107151204-503034dafe4e
+# go.starlark.net v0.0.0-20251107151204-503034dafe4e => github.com/mykso/starlark-go v0.0.0-20251108002638-42ea92477ee9
 ## explicit; go 1.19
 go.starlark.net/internal/compile
 go.starlark.net/internal/spell
@@ -68,4 +68,4 @@ gopkg.in/check.v1
 # gopkg.in/yaml.v3 v3.0.1
 ## explicit
 gopkg.in/yaml.v3
-# go.starlark.net => github.com/mykso/starlark-go v0.0.0-20251107151204-503034dafe4e
+# go.starlark.net => github.com/mykso/starlark-go v0.0.0-20251108002638-42ea92477ee9
