@@ -2,6 +2,6 @@ test1: #@ data.values.pass.key
 
 +++
 
-ERR: 
-- use of reserved keyword 'pass' is not allowed
+ERR:
+- use of reserved keyword 'pass' is not allowed (expected identifier)
     stdin:1 | test1: #@ data.values.pass.key

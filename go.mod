@@ -12,7 +12,7 @@ require (
 	github.com/k14s/difflib v0.0.0-20201117154628-0c031775bf57
 	github.com/spf13/cobra v1.7.0
 	github.com/stretchr/testify v1.8.4
-	go.starlark.net v0.0.0-20251107151204-503034dafe4e
+	go.starlark.net v0.0.0-20260308204554-5a23e8e5ecd1
 	gopkg.in/check.v1 v1.0.0-20190902080502-41f04d3bba15
 )
 
@@ -27,4 +27,4 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
-replace go.starlark.net => github.com/mykso/starlark-go v0.0.0-20251108002638-42ea92477ee9
+replace go.starlark.net => github.com/mykso/starlark-go v0.0.0-20260308204554-5a23e8e5ecd1
