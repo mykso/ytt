@@ -42,10 +42,17 @@ func (p *Printer) PrintStr(val interface{}) string {
 func (p *Printer) print(val interface{}, ws whitespace, writer *writer) {
 	switch typedVal := val.(type) {
 	case *yamlmeta.DocumentSet:
+		// if the last document is empty, don't add a separator before it
+		nonEmptyDocCount := len(typedVal.Items)
+		lastDoc := typedVal.Items[len(typedVal.Items)-1]
+		if lastDoc.IsEmpty() {
+			nonEmptyDocCount--
+		}
+
 		for i, item := range typedVal.Items {
 			// TODO deal with first empty doc
 			meta := p.printMeta(item, ws, writer, i == 0)
-			if (i > 0 && i < len(typedVal.Items)-1) || len(meta.Suffix) > 0 {
+			if (i > 0 && i < nonEmptyDocCount) || len(meta.Suffix) > 0 {
 				writer.AddContent(writerChunk{
 					Indent:  ws.Indent,
 					Content: "---" + meta.Suffix,
@@ -155,7 +162,30 @@ func (v printerLeafValue) IsMultiline() bool {
 
 func (p *Printer) leafValue(val interface{}) printerLeafValue {
 	switch typedVal := val.(type) {
-	case *yamlmeta.DocumentSet, *yamlmeta.Document, *yamlmeta.Map, *yamlmeta.MapItem, *yamlmeta.Array, *yamlmeta.ArrayItem:
+	case *yamlmeta.DocumentSet, *yamlmeta.Document, *yamlmeta.MapItem,
+		*yamlmeta.ArrayItem:
+		return printerLeafValue{}
+
+	case *yamlmeta.Map:
+		// handle the case of an empty map
+		if len(typedVal.Items) == 0 {
+			return printerLeafValue{
+				String: "{}",
+				IsLeaf: true,
+				IsNil:  false,
+			}
+		}
+		return printerLeafValue{}
+
+	case *yamlmeta.Array:
+		// handle the case of an empty array
+		if len(typedVal.Items) == 0 {
+			return printerLeafValue{
+				String: "[]",
+				IsLeaf: true,
+				IsNil:  false,
+			}
+		}
 		return printerLeafValue{}
 
 	default:
